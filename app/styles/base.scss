@@ -1,0 +1,27 @@
+html, body {
+  background-color: #000000;
+  color: #EEEEEE;
+  height: 100vh;
+}
+
+// Text
+.centered {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.round-edges {
+  border-radius: 5px;
+}
+
+.basic-link a {
+  text-decoration: none;
+  color: inherit;
+}
