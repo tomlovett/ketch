@@ -1,0 +1,32 @@
+<div class="players layout-row flex">
+  <span class="flex-5"></span>
+
+  {{game/player-list
+      players=benchMen
+      onClick=(action 'sub')
+      class="flex-25"
+      playerClass=team.primary
+  }}
+  {{game/player-list
+      players=benchWomen
+      onClick=(action 'sub')
+      class="flex-25"
+      playerClass=team.secondary
+  }}
+
+  <span class="flex"></span>
+  <div class="flex-25">
+    {{game/player-list
+        players=fieldWomen
+        onClick=(action 'sub')
+        playerClass=team.secondary
+    }}
+    {{game/player-list
+        players=fieldMen
+        onClick=(action 'sub')
+        playerClass=team.primary
+    }}
+  </div>
+
+  <span class="flex-5"></span>
+</div>

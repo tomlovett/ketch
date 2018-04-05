@@ -1,0 +1,7 @@
+<div class="player-list layout-column">
+  {{#each sortedPlayers as |player|}}
+    <div class="flex player-slice round-edges {{playerClass}}" {{action 'click' player}}>
+      {{player.firstName}}
+    </div>
+  {{/each}}
+</div>
