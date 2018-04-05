@@ -1,0 +1,21 @@
+<div class="score-board layout-row flex">
+  <div class="layout-column flex-50">
+    <h1 class="flex centered">
+      <span class="score {{team.primary}}">{{game.ourScore}}</span>
+    </h1>
+
+    <h3 class="flex centered">
+      <span class="team-name {{team.primary}}">{{team.name}}</span>
+    </h3>
+  </div>
+
+  <div class="layout-column flex-50">
+    <h1 class="flex centered">
+      <span class="score white">{{game.theirScore}}</span>
+    </h1>
+
+    <h3 class="flex centered">
+      <span class="team-name white">{{game.opponent}}</span>
+    </h3>
+  </div>
+</div>
