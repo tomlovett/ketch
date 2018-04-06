@@ -9,13 +9,24 @@
     <span class="flex"></span>
 
     {{#paper-button class="white flex-33"}}
-      {{#link-to 'game.recap'}}View Players{{/link-to}}
+      {{#link-to 'game.recap.players'}}View Players{{/link-to}}
     {{/paper-button}}
     
     <span class="flex"></span>
   </div>
 
   {{outlet}}
+  {{!-- pass in game, team, points, players --}}
+  {{!-- components --}}
+
+{{!--   {{#each players as |player|}}
+    {{game/recap/player-slice
+        player=player
+        points=points
+    }}
+  {{/each}} --}}
+
+  {{!-- else each sortedPoints as point --}}
 
   <div class="flex"></div>
 

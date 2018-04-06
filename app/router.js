@@ -12,6 +12,7 @@ Router.map(function() {
 
     this.route('recap', function() {
       this.route('points');
+      this.route('players');
     });
   });
 });

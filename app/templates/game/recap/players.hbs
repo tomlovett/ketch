@@ -1,0 +1,6 @@
+  {{#each model.players as |player|}}
+    {{game/recap/player-slice
+        player=model.player
+        points=model.points
+    }}
+  {{/each}}
