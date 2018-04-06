@@ -1,0 +1,29 @@
+<div class="layout-column">
+  <div class="flex-10 layout-row">
+    <span class="flex"></span>
+    
+    {{#paper-button class="white flex-33"}}
+      {{#link-to 'game.recap.points'}}View Points{{/link-to}}
+    {{/paper-button}}
+
+    <span class="flex"></span>
+
+    {{#paper-button class="white flex-33"}}
+      {{#link-to 'game.recap'}}View Players{{/link-to}}
+    {{/paper-button}}
+    
+    <span class="flex"></span>
+  </div>
+
+  {{outlet}}
+
+  <div class="flex"></div>
+
+  <div class="flex-10 layout-row">
+    <span class="flex"></span>
+    {{#paper-button class="white flex-80"}}
+      {{#link-to 'game.play'}}Back to Game{{/link-to}}
+    {{/paper-button}}
+    <span class="flex"></span>
+  </div>
+</div>

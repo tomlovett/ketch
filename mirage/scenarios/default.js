@@ -4,6 +4,6 @@ export default function(server) {
 
   const game = server.create('game', { team });
 
-  const line = players.slice(0, 6);
+  const line = players.slice(0, 7);
   const points = server.createList('point', 5, { game, players: line });
 }

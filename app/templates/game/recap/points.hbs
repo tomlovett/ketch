@@ -1,20 +1,20 @@
 <div class="layout-column">
-  {{#each model.points as |point|}}
+  {{#each model as |point|}}
     {{#if point.weScored}}
-      <div class="layout-row flex-10 {{model.team.primary}}">
-        <span class="flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
-        <span class="flex">
+      <div class="layout-row flex-10 {{team.primary}}">
+        <span class="recap-score flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
+        <span class="scroll-x flex">
           {{#each point.players as |player|}}
-            {{player.firstName}}&nbsp;
+            {{player.firstName}}
           {{/each}}
         </span>
       </div>
     {{else}}
       <div class="layout-row flex-10 blue">
-        <span class="flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
-        <span class="flex">
+        <span class="recap-score flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
+        <span class="scroll-x flex">
           {{#each point.players as |player|}}
-            {{player.firstName}}&nbsp;
+            {{player.firstName}}
           {{/each}}
         </span>
       </div>

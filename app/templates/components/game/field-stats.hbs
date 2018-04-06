@@ -5,22 +5,18 @@
     Gold Star!
   {{/paper-button}}
 
-  <span class="flex-10"></span>
-
   {{#paper-button class="flex-15 stat red" onClick=(action clickStat 'boo')}}
     Boo...
   {{/paper-button}}
-
-  <span class="flex-10"></span>
 
   {{#paper-button class="flex-15 stat white" onClick=(action resetLine)}}
     Adjust Line
   {{/paper-button}}
 
-  <span class="flex-10"></span>
+  <span class="flex"></span>
 
-  {{#paper-button class="flex-15 stat white" onClick=(action resetLine)}}
-    View Stats
+  {{#paper-button class="flex-15 stat white"}}
+    {{#link-to "game.recap.points"}}View Stats{{/link-to}}
   {{/paper-button}}
 
   <span class="flex"></span>
