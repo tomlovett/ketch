@@ -6,6 +6,7 @@ export default DS.Model.extend({
   opponent: attr('string', { defaultValue: 'SPAM' }),
   // opponentColor
   ourScore: attr('number', { defaultValue: 0 }),
+  point: hasMany(),
   theirScore: attr('number', {defaultValue: 0 }),
   team: belongsTo('team'),
 });

@@ -8,7 +8,7 @@
       They scored...
     {{/paper-button}}
   {{else}}
-    {{#paper-button onClick=(action 'setLine') class="white flex"}}
+    {{#paper-button onClick=(action toggleProperty 'inPlay') class="white flex"}}
       Done Subs
     {{/paper-button}}
   {{/if}}
@@ -21,7 +21,7 @@
     {{game/field-stats
         class="flex-45"
         clickStat=(action 'clickStat')
-        resetLine=(action 'resetLine')
+        resetLine=(action toggleProperty 'inPlay')
     }}
   {{else}}
     {{game/player-list

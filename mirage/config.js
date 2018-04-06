@@ -4,9 +4,11 @@ export default function() {
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   this.get('games/:id');
+  this.patch('games/:id');
 
   this.get('teams/:id');
 
+  this.get('points');
   this.post('points');
   this.put('points/:id', (schema, request) => {
     return request.requestBody;

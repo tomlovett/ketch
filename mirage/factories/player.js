@@ -1,4 +1,4 @@
-import { Factory, faker } from 'ember-cli-mirage';
+import { association, Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
   firstName() {
@@ -10,4 +10,5 @@ export default Factory.extend({
   lastName() {
     return faker.name.lastName();
   },
+  team: association(),
 });

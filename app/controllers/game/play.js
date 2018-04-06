@@ -50,14 +50,6 @@ export default Controller.extend({
 
       this.toggleProperty('inPlay');
     },
-
-    resetLine() {
-      this.toggleProperty('inPlay');
-    },
-
-    setLine() {
-      this.toggleProperty('inPlay');
-    },
   },
 
   savePoint(weScored) {
