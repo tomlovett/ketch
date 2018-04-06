@@ -7,6 +7,13 @@ export default function() {
 
   this.get('teams/:id');
 
+  this.post('points');
+  this.put('points/:id', (schema, request) => {
+    return request.requestBody;
+  }, 201);
+
+  this.post('stats');
+
   /*
     Shorthand cheatsheet:
 

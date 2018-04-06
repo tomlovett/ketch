@@ -17,15 +17,85 @@ export default Controller.extend({
 
   onField: uniq('fieldMen', 'fieldWomen'),
   inPlay: false,
-  point: null,
+
+  liveStatType: null,
+  liveStatPlayer: null,
+  queuedStats: [],
 
   actions: {
-    sub(player) {
+    clickPlayer(player) {
       if (this.get('inPlay')) {
-        return;
-      }
+        const statPlayer = player == this.get('liveStatPlayer') ? null : player;
+        this.set('liveStatPlayer', statPlayer);
 
-      player.toggleProperty('onField');
+        this.saveStat();
+      } else {
+        player.toggleProperty('onField');
+      }
     },
-  }
+
+    clickStat(type) {
+      const statType = this.get('liveStatType') ? null : type;
+
+      this.set('liveStatType', statType);
+
+      this.saveStat();
+    },
+
+    recordScore(weScored) {
+      const teamScore = weScored ? 'game.ourScore' : 'game.theirScore'
+
+      this.incrementProperty(teamScore);
+      this.savePoint(weScored);
+
+      this.toggleProperty('inPlay');
+    },
+
+    resetLine() {
+      this.toggleProperty('inPlay');
+    },
+
+    setLine() {
+      this.toggleProperty('inPlay');
+    },
+  },
+
+  savePoint(weScored) {
+    const point = this.get('store').createRecord('point', {
+      ourScore: this.get('game.ourScore'),
+      players: this.get('onField'),
+      theirScore: this.get('game.theirScore'),
+      weScored: weScored,
+    }).save();
+
+    this.get('game').save();
+
+    this.saveQueuedStats(point);
+  },
+
+  saveStat() {
+    const type = this.get('liveStatType');
+    const player = this.get('liveStatPlayer');
+
+    if (!(type && player)) {
+      return;
+    }
+
+    const stat = this.get('store').createRecord('stat', {
+      player,
+      type
+    });
+
+    this.get('queuedStats').push(stat);
+  },
+
+  saveQueuedStats(point) {
+    this.get('queuedStats').setEach('point', point);
+
+    this.get('queuedStats').forEach(function(statObj) {
+      statObj.save();
+    });
+
+    this.set('queuedStats', []);
+  },
 });

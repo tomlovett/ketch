@@ -1,29 +1,54 @@
+<div class="flex-10 layout-row">
+  {{#if inPlay}}
+    {{#paper-button onClick=(action 'recordScore' true) class="green flex-50"}}
+      We scored!
+    {{/paper-button}}
+
+    {{#paper-button onClick=(action 'recordScore' false) class="red flex-50"}}
+      They scored...
+    {{/paper-button}}
+  {{else}}
+    {{#paper-button onClick=(action 'setLine') class="white flex"}}
+      Done Subs
+    {{/paper-button}}
+  {{/if}}
+</div>
+
 <div class="players layout-row flex">
   <span class="flex-5"></span>
 
-  {{game/player-list
-      players=benchMen
-      onClick=(action 'sub')
-      class="flex-25"
-      playerClass=team.primary
-  }}
-  {{game/player-list
-      players=benchWomen
-      onClick=(action 'sub')
-      class="flex-25"
-      playerClass=team.secondary
-  }}
+  {{#if inPlay}}
+    {{game/field-stats
+        class="flex-45"
+        clickStat=(action 'clickStat')
+        resetLine=(action 'resetLine')
+    }}
+  {{else}}
+    {{game/player-list
+        players=benchMen
+        clickPlayer=(action 'clickPlayer')
+        class="flex-25"
+        playerClass=team.primary
+    }}
+    {{game/player-list
+        players=benchWomen
+        clickPlayer=(action 'clickPlayer')
+        class="flex-25"
+        playerClass=team.secondary
+    }}
+  {{/if}}
 
   <span class="flex"></span>
+
   <div class="flex-25">
     {{game/player-list
         players=fieldWomen
-        onClick=(action 'sub')
+        clickPlayer=(action 'clickPlayer')
         playerClass=team.secondary
     }}
     {{game/player-list
         players=fieldMen
-        onClick=(action 'sub')
+        clickPlayer=(action 'clickPlayer')
         playerClass=team.primary
     }}
   </div>
