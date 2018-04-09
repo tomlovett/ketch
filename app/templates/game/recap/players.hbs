@@ -1,6 +1,8 @@
-  {{#each model.players as |player|}}
-    {{game/recap/player-slice
-        player=model.player
-        points=model.points
-    }}
+  {{#each model.players as |player i|}}
+    <span class="{{if (is-odd i) model.team.primary model.team.secondary}}">
+      {{game/recap/player-slice
+          player=player
+          points=model.points
+      }}
+    </span>
   {{/each}}

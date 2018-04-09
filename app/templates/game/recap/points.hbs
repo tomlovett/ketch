@@ -1,8 +1,6 @@
 <div class="layout-column">
   {{#each model.points as |point|}}
-    {{#if point.weScored}}
-
-      <div class="layout-row flex-10 {{model.team.primary}}">
+      <div class="layout-row flex-10 {{if point.weScored model.team.primary 'blue'}}">
         <span class="recap-score flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
         <span class="scroll-x flex">
           {{#each point.players as |player|}}
@@ -10,18 +8,5 @@
           {{/each}}
         </span>
       </div>
-
-    {{else}}
-
-      <div class="layout-row flex-10 blue">
-        <span class="recap-score flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
-        <span class="scroll-x flex">
-          {{#each point.players as |player|}}
-            {{player.firstName}}
-          {{/each}}
-        </span>
-      </div>
-
-    {{/if}}
   {{/each}}
 </div>
