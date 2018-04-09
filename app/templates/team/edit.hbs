@@ -1,0 +1,42 @@
+<div class="layout-column">
+  <h3>Name: {{input value=team.name}}</h3>
+
+  <h3>Primary: </h3>
+
+  {{#paper-select
+    disabled=disableSelect
+    label="Primary"
+    options=colors
+    selected=team.primary
+    onChange=(action (mut team.primary))
+    as |color|}}
+    <div class={{color}}>
+      {{color}}
+    </div>
+  {{/paper-select}}
+
+
+  <h3>Secondary: </h3>
+  {{#paper-select
+    disabled=disableSelect
+    label="Secondary"
+    options=colors
+    selected=team.secondary
+    onChange=(action (mut team.secondary))
+    as |color|}}
+    <div class={{color}}>
+      {{color}}
+    </div>
+  {{/paper-select}}
+
+
+  <div class="layout-align-space-around-center flex-15">
+    {{#paper-button class="white"}}
+      {{#link-to "team"}}Cancel{{/link-to}}
+    {{/paper-button}}
+
+    {{#paper-button class="white" onClick=(action 'save')}}
+      Save
+    {{/paper-button}}
+  </div>
+</div>

@@ -15,6 +15,10 @@ Router.map(function() {
       this.route('players');
     });
   });
+  this.route('team', { path: 'team/:team_id' }, function() {
+    this.route('edit');
+  });
+  this.route('new-team');
 });
 
 export default Router;

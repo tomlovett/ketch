@@ -7,6 +7,7 @@ export default function() {
   this.patch('games/:id');
 
   this.get('teams/:id');
+  this.patch('teams/:id');
 
   this.get('points');
   this.post('points');
