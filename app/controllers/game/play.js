@@ -23,6 +23,12 @@ export default Controller.extend({
   queuedStats: [],
 
   actions: {
+    clearLine() {
+      this.get('onField').forEach((player => {
+        player.toggleProperty('onField');
+      }));
+    },
+
     clickPlayer(player) {
       if (this.get('inPlay')) {
         const statPlayer = player == this.get('liveStatPlayer') ? null : player;

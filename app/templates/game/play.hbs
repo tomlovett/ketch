@@ -51,7 +51,14 @@
         clickPlayer=(action 'clickPlayer')
         playerClass=team.primary
     }}
+
+    {{#unless inPlay}}
+      {{#paper-button class="flex-5 white" onClick=(action 'clearLine')}}
+        Clear line
+      {{/paper-button}}
+    {{/unless}}
   </div>
+
 
   <span class="flex-5"></span>
 </div>

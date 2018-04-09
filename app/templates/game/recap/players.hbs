@@ -1,8 +1,8 @@
-  {{#each model.players as |player i|}}
-    <span class="{{if (is-odd i) model.team.primary model.team.secondary}}">
+  {{#each sortedPlayers as |player i|}}
+    <span class="{{if (is-odd i) team.primary team.secondary}}">
       {{game/recap/player-slice
           player=player
-          points=model.points
+          points=points
       }}
     </span>
   {{/each}}
