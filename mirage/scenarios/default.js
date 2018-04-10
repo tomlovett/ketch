@@ -1,9 +1,17 @@
 export default function(server) {
-  const players = server.createList('player', 17);
-  const team = server.create('team', { players });
+  server.createList('team', 2);
+  const players = server.createList('player', 30);
 
-  const game = server.create('game', { team });
+  for (let i = 1; i < 15; i++) {
+    server.create('player-team', { teamId: 1, playerId: i});
+  }
 
-  const line = players.slice(0, 7);
-  const points = server.createList('point', 5, { game, players: line });
+  for (let i = 15; i < 30; i++) {
+    server.create('player-team', { teamId: 2, playerId: i});
+  }
+
+  const game = server.create('game', { teamId: 1 });
+
+  // const line = players.slice(0, 7);
+  // const points = server.createList('point', 5, { game, players: line });
 }

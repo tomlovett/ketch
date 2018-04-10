@@ -1,7 +1,7 @@
 import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  primary: 'purple',
-  secondary: 'white',
-  name: 'Purple Jerk',
+  primary: faker.list.cycle('orange', 'purple'),
+  secondary: faker.list.cycle('white', 'white'),
+  name: faker.list.cycle('Flaming Croissants', 'Purple Jerk'),
 });

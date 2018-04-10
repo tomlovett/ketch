@@ -2,6 +2,12 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model(params) {
-    return this.get('store').findRecord('team', params.team_id);
+    return this.get('store').findRecord('team', params.team_id, { incude: 'players' });
   },
+
+  // afterModel(model) {
+  //   if (model.players) {
+
+  //   }
+  // }
 });
