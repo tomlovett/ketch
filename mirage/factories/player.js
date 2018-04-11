@@ -10,4 +10,8 @@ export default Factory.extend({
   lastName() {
     return faker.name.lastName();
   },
+
+  nickname(i) {
+    return (i % 5) == 0 ? faker.lorem.word() : null;
+  },
 });

@@ -1,5 +1,52 @@
-<h2>Roster</h2>
-{{#each model.players as |player|}}
-  {{player.firstName}}
-{{/each}}
-{{outlet}}
+<div class="layout-row">
+  <div class="flex-33">
+    {{game/player-list
+        players=model.players
+        clickPlayer=(action 'editPlayer')
+        playerClass=model.primary
+    }}
+  </div>
+
+  <div class="layout-column layout-align-center-center flex">
+    <span class="flex-5"></span>
+
+    <label>First Name</label>
+    {{input value=livePlayer.firstName onChange=(mut livePlayer.firstName) required=true}}
+
+    <label>Last Name</label>
+    {{input value=livePlayer.lastName onChange=(mut livePlayer.lastName) required=true}}
+
+    <label>Nickname</label>
+    {{input value=livePlayer.nickname onChange=(mut livePlayer.nickname)}}
+
+    <label>Gender</label>
+    <div class="layout-row flex-15">
+      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=isM}}
+        M
+      {{/paper-button}}
+      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'f') primary=isF}}
+        F
+      {{/paper-button}}
+    </div>
+
+    <span class="flex-10"></span>
+
+    <div class="flex-10 layout-row">
+      {{#paper-button class="flex-10" raised=true onClick=(action 'deletePlayer') warn=true}}
+        Delete
+      {{/paper-button}}
+
+      {{#paper-button class="flex-10" raised=true onClick=(action 'resetPlayer')}}
+        Reset
+      {{/paper-button}}
+    </div>
+
+    <div class="flex-10">
+      {{#paper-button class="flex-75" raised=true onClick=(action 'savePlayer')}}
+        Save
+      {{/paper-button}}
+    </div>
+
+    <span class="flex"></span>
+  </div>
+</div>

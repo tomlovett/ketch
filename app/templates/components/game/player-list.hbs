@@ -1,7 +1,7 @@
 <div class="player-list layout-column">
   {{#each sortedPlayers as |player|}}
     <div class="flex player-slice round-edges {{playerClass}}" {{action clickPlayer player}}>
-      {{player.firstName}}
+      {{player.handle}}
     </div>
   {{/each}}
 </div>

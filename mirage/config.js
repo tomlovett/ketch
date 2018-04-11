@@ -10,6 +10,9 @@ export default function() {
   this.patch('teams/:id');
 
   this.get('players/:id');
+  this.patch('players/:id');
+  this.post('players');
+  this.del('players/:id');
 
   this.get('points');
   this.post('points');
