@@ -10,5 +10,4 @@ export default Factory.extend({
   weScored(i) {
     return (i % 2 == 0);
   },
-  game: association(),
 });

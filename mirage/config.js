@@ -9,6 +9,8 @@ export default function() {
   this.get('teams/:id');
   this.patch('teams/:id');
 
+  this.get('players/:id');
+
   this.get('points');
   this.post('points');
   this.put('points/:id', (schema, request) => {

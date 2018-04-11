@@ -8,5 +8,5 @@ export default DS.Model.extend({
   ourScore: attr('number', { defaultValue: 0 }),
   point: hasMany(),
   theirScore: attr('number', {defaultValue: 0 }),
-  team: belongsTo('team'),
+  team: belongsTo(),
 });
