@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('team', { path: 'team/:team_id' }, function() {
     this.route('edit');
     this.route('roster');
+    this.route('games');
   });
   this.route('new-team');
 });

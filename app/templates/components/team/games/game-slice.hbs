@@ -1,0 +1,10 @@
+<div class="layout-row {{colorClass}}" {{action toggleProperty 'showExpanded'}}>
+  <div class="flex-50">
+    <span class="flex-15">{{game.ourScore}} - {{game.theirScore}} |</span>
+    <span class="flex"> vs. {{if game.opponentName game.opponentName 'Those guys'}}</span>
+  </div>
+  {{#if showExpanded}}
+    <p>expanded</p>
+    {{!-- go to game --}}
+  {{/if}}
+</div>

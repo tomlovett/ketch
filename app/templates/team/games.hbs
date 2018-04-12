@@ -1,0 +1,19 @@
+<div class="layout-column">
+  <div class="layout-row layout-align-end-center flex-10">
+    {{#paper-button class="green"}}
+      +New Game
+{{!-- link-to new-game (pass in model) --}}
+    {{/paper-button}}
+
+    <span class="flex-5"></span>
+  </div>
+
+  {{#each games as |game|}}
+    {{team/games/game-slice
+        game=game
+        team=team
+    }}
+  {{else}}
+    <p>No games on record for {{team.name}}</p>
+  {{/each}}
+</div>

@@ -4,6 +4,11 @@ export default function() {
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   this.get('games/:id');
+  this.get('games', (schema, request) => {
+    const teamId = request.queryParams.teamId;
+
+    return schema.games.where({ teamId });
+  })
   this.patch('games/:id');
 
   this.get('teams/:id');
