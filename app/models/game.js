@@ -3,7 +3,7 @@ import DS from 'ember-data';
 const { attr, belongsTo, hasMany } = DS;
 
 export default DS.Model.extend({
-  opponent: attr('string', { defaultValue: 'SPAM' }),
+  opponentName: attr('string', { defaultValue: 'SPAM' }),
   opponentColor: attr('string', { defaultValue: 'blue' }),
   ourScore: attr('number', { defaultValue: 0 }),
   point: hasMany(),

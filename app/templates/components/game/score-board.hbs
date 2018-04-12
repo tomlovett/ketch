@@ -11,11 +11,11 @@
 
   <div class="layout-column flex-50">
     <h1 class="flex centered">
-      <span class="score blue">{{game.theirScore}}</span>
+      <span class="score {{game.opponentColor}}">{{game.theirScore}}</span>
     </h1>
 
     <h3 class="flex centered">
-      <span class="team-name blue">{{game.opponent}}</span>
+      <span class="team-name {{game.opponentColor}}">{{game.opponentName}}</span>
     </h3>
   </div>
 </div>
