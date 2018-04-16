@@ -1,0 +1,13 @@
+{{#paper-select
+  disabled=disableSelect
+  label="Color"
+  options=colors
+  selected=selected
+  onChange=onChange
+  as |color|}}
+
+  <span class={{color}}>
+    {{color}}
+  </span>
+
+{{/paper-select}}

@@ -1,34 +1,23 @@
 <div class="layout-column">
   <h3>Name: {{input value=team.name}}</h3>
 
-  <h3>Primary: </h3>
+  <div class="layout-row">
+    <h3 class="flex">Primary: </h3>
+    {{team/color-select
+        selected=team.primary
+        onChange=(action (mut team.primary))
+        class="flex"
+    }}
+  </div>
 
-  {{#paper-select
-    disabled=disableSelect
-    label="Primary"
-    options=colors
-    selected=team.primary
-    onChange=(action (mut team.primary))
-    as |color|}}
-    <div class={{color}}>
-      {{color}}
-    </div>
-  {{/paper-select}}
-
-
-  <h3>Secondary: </h3>
-  {{#paper-select
-    disabled=disableSelect
-    label="Secondary"
-    options=colors
-    selected=team.secondary
-    onChange=(action (mut team.secondary))
-    as |color|}}
-    <div class={{color}}>
-      {{color}}
-    </div>
-  {{/paper-select}}
-
+  <div class="layout-row">
+    <h3 class="flex">Secondary: </h3>
+    {{team/color-select
+      selected=team.secondary
+      onChange=(action (mut team.secondary))
+      class="flex"
+    }}
+  </div>
 
   <div class="layout-row layout-align-space-around-center flex-15">
     {{#paper-button class="white"}}

@@ -3,19 +3,15 @@
 <div class="layout-column">
   <h3>Opponent Name: {{input value=(mut opponentName)}}</h3>
 
-  <h3>Opponent Color: </h3>
+  <div class="layout-row">
+    <h3 class="flex">Opponent Color: </h3>
 
-  {{#paper-select
-    disabled=disableSelect
-    label="Color"
-    options=colors
-    selected=opponentColor
-    onChange=(action (mut opponentColor))
-    as |color|}}
-    <div class={{color}}>
-      {{color}}
-    </div>
-  {{/paper-select}}
+    {{team/color-select
+        onChange=(action (mut opponentColor))
+        selected=opponentColor
+        class="flex"
+    }}
+  </div>
 
   {{#if displayErrorMessage}}
     <p>Please enter a team name and color for your opponent.</p>
