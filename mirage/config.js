@@ -12,9 +12,6 @@ export default function() {
   this.patch('games/:id');
   this.post('games');
 
-  this.get('teams/:id');
-  this.patch('teams/:id');
-
   this.get('players/:id');
   this.patch('players/:id');
   this.post('players');
@@ -28,13 +25,13 @@ export default function() {
 
   this.post('stats');
 
-  /*
-    Shorthand cheatsheet:
+  this.get('teams/:id');
+  this.patch('teams/:id');
 
-    this.get('/posts');
-    this.post('/posts');
-    this.get('/posts/:id');
-    this.put('/posts/:id'); // or this.patch
+  this.get('users/:id');
+  this.patch('users/:id');
+
+  /*
     this.del('/posts/:id');
   */
 }

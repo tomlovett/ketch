@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-const { attr, hasMany } = DS;
+const { attr, belongsTo, hasMany } = DS;
 
 export default DS.Model.extend({
   game: hasMany(),
@@ -8,4 +8,5 @@ export default DS.Model.extend({
   players: hasMany(),
   primary: attr('string'),
   secondary: attr('string'),
+  user: belongsTo(),
 });

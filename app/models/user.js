@@ -1,16 +1,14 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
 
-const { attr, belongsTo, hasMany } = DS;
+const { attr, hasMany } = DS;
 
 export default DS.Model.extend({
-  firstName: attr('string'),
+  teams: hasMany(),
   gender: attr('string'),
+  firstName: attr('string'),
   lastName: attr('string'),
   nickname: attr('string'),
-  point: hasMany(),
-  team: belongsTo(),
-  stat: hasMany(),
 
   handle: computed('nickname', 'firstName', function() {
     const nickname = this.get('nickname');

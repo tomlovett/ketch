@@ -1,0 +1,17 @@
+<div class="layout-column">
+  <div class="white flex-10">
+    <h1>{{model.handle}} {{model.lastName}}</h1>
+  </div>
+
+  <div class="layout-row layout-align-space-around-center flex-5">
+    {{#paper-button class="white flex-25"}}
+      {{#link-to 'user'}}Teams{{/link-to}}
+    {{/paper-button}}
+
+    {{#paper-button class="white flex-25"}}
+      {{#link-to 'user'}}Edit{{/link-to}}
+    {{/paper-button}}
+  </div>
+
+  {{outlet}}
+</div>

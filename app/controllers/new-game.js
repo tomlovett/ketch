@@ -4,11 +4,10 @@ const { computed: { alias, and } } = Ember;
 
 export default Controller.extend({
   team: alias('model'),
-  colors: ['red', 'red-orange', 'orange', 'yellow-orange', 'yellow', 'yellow-green', 'green', 'blue', 'light-blue', 'dark-blue', 'pink', 'purple', 'white', 'brown', 'black'],
-  displayErrorMessage: false,
   bothInput: and('opponentName', 'opponentColor'),
-  opponentName: '',
+  displayErrorMessage: false,
   opponentColor: 'black',
+  opponentName: '',
 
   actions: {
     createGame() {
