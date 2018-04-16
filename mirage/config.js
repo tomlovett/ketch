@@ -10,6 +10,7 @@ export default function() {
     return schema.games.where({ teamId });
   })
   this.patch('games/:id');
+  this.post('games');
 
   this.get('teams/:id');
   this.patch('teams/:id');

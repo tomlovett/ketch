@@ -21,6 +21,7 @@ Router.map(function() {
     this.route('games');
   });
   this.route('new-team');
+  this.route('new-game', {path: 'new-game/:team_id' });
 });
 
 export default Router;

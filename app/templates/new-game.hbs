@@ -1,0 +1,27 @@
+<h3>New Game!</h3>
+
+<div class="layout-column">
+  <h3>Opponent Name: {{input value=(mut opponentName)}}</h3>
+
+  <h3>Opponent Color: </h3>
+
+  {{#paper-select
+    disabled=disableSelect
+    label="Color"
+    options=colors
+    selected=opponentColor
+    onChange=(action (mut opponentColor))
+    as |color|}}
+    <div class={{color}}>
+      {{color}}
+    </div>
+  {{/paper-select}}
+
+  {{#if displayErrorMessage}}
+    <p>Please enter a team name and color for your opponent.</p>
+  {{/if}}
+
+  {{#paper-button class="green" onClick=(action 'createGame')}}
+    Let's go!
+  {{/paper-button}}
+</div>

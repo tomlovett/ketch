@@ -12,6 +12,6 @@ export default Factory.extend({
   },
 
   nickname(i) {
-    return (i % 5) == 0 ? faker.lorem.word() : null;
+    return (i % 5) == 0 ? faker.random.word() : null;
   },
 });
