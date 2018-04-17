@@ -26,6 +26,11 @@ export default function() {
   this.post('stats');
 
   this.get('teams/:id');
+  this.get('teams', (schema, request) => {
+    const userId = request.queryParams.userId;
+
+    return schema.teams.where({ userId });
+  });
   this.patch('teams/:id');
 
   this.get('users/:id');

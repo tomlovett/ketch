@@ -1,0 +1,21 @@
+<div class="layout-column">
+  <div class="layout-row layout-align-end-center flex-10">
+    {{!-- record, point diff --}}
+    {{#paper-button class="green"}}
+      {{#link-to "new-team" user}}+New Team{{/link-to}}
+    {{/paper-button}}
+
+    <span class="flex-5"></span>
+  </div>
+
+  {{#each model.teams as |team|}}
+    <div class="layout-row {{team.primary}} flex-15">
+      <span class="flex-5"></span>
+      {{#link-to 'team.games' team}}
+        <h3 class="flex">{{team.name}}</h3>
+        {{!-- team record --}}
+      {{/link-to}}
+    </div>
+  {{/each}}
+
+</div>
