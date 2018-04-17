@@ -1,6 +1,5 @@
 import Component from '@ember/component';
-
-const { computed } = Ember;
+import { computed } from '@ember/object';
 
 export default Component.extend({
   game: null,

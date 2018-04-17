@@ -1,6 +1,5 @@
 import Controller from '@ember/controller';
-
-const { computed: { equal } } = Ember;
+import { equal } from '@ember/object/computed';
 
 export default Controller.extend({
   isF: equal('model.gender', 'f'),

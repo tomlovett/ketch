@@ -1,6 +1,5 @@
 import Controller from '@ember/controller';
-
-const { computed: { alias, sort } } = Ember;
+import { alias, sort } from '@ember/object/computed';
 
 export default Controller.extend({
   game: alias('model.game'),

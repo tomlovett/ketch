@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 
 export default Route.extend({
-  model(params) {
+  model() {
     const teamId = this.modelFor('team').get('id');
 
     return RSVP.hash({
