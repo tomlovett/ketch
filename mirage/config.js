@@ -32,6 +32,7 @@ export default function() {
     return schema.teams.where({ userId });
   });
   this.patch('teams/:id');
+  this.post('teams');
 
   this.get('users/:id');
   this.patch('users/:id');

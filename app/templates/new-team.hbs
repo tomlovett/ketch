@@ -1,1 +1,31 @@
-{{outlet}}
+<div class="layout-column">
+  <h3>Team Name: {{input value=(mut name)}}</h3>
+
+  <div class="layout-row">
+    <h3 class="flex">Primary: </h3>
+
+    {{team/color-select
+        onChange=(action (mut primary))
+        selected=primary
+        class="flex"
+    }}
+  </div>
+
+  <div class="layout-row">
+    <h3 class="flex">Secondary: </h3>
+
+    {{team/color-select
+        onChange=(action (mut secondary))
+        selected=secondary
+        class="flex"
+    }}
+  </div>
+
+  {{#if displayErrorMessage}}
+    <p>Please enter a team name and primary and secondary colors for your team.</p>
+  {{/if}}
+
+  {{#paper-button class="green" onClick=(action 'createTeam')}}
+    Let's go!
+  {{/paper-button}}
+</div>
