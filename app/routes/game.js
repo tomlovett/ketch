@@ -6,8 +6,8 @@ export default Route.extend({
   },
 
   afterModel(model) {
-    model.get('team.players').forEach((player) => {
-      player.set('onField', false);
-    })
+    const players = model.get('team.players');
+
+    players.setEach('onField', false);
   },
 });
