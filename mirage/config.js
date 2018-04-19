@@ -36,8 +36,5 @@ export default function() {
 
   this.get('users/:id');
   this.patch('users/:id');
-
-  /*
-    this.del('/posts/:id');
-  */
+  this.post('users');
 }

@@ -28,6 +28,7 @@ Router.map(function() {
     this.route('teams');
     this.route('new-team');
   });
+  this.route('new-user');
 });
 
 export default Router;
