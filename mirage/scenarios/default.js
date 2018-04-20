@@ -3,7 +3,7 @@ export default function(server) {
   const players = server.createList('player', 17);
   const team = server.create('team', { players, user });
 
-  const game = server.create('game', { ourScore: 2, theirScore: 3, team });
+  const game = server.create('game', { ourScore: 3, theirScore: 2, team });
   server.create('game', { ourScore: 15, theirScore: 11, team, opponentName: 'Flaming Croissants'});
   server.create('game', { ourScore: 13, theirScore: 15, team, opponentName: 'Oddjob', opponentColor: 'yellow'});
   server.create('game', { ourScore: 15, theirScore: 6, team, opponentName: 'License to Kilt'});

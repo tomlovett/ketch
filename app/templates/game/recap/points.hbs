@@ -1,10 +1,10 @@
 <div class="layout-column">
   {{#each model.points as |point|}}
-      <div class="layout-row flex-10 {{if point.weScored model.team.primary 'blue'}}">
+      <div class="layout-row flex-10 {{if point.weScored model.team.primary model.game.opponentColor}}" style="border-top: 1px solid black">
         <span class="recap-score flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
         <span class="scroll-x flex">
           {{#each point.players as |player|}}
-            {{player.firstName}}
+            {{player.handle}}
           {{/each}}
         </span>
       </div>
