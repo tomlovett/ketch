@@ -9,26 +9,24 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('game', { path: '/game/:game_id' }, function() {
     this.route('play');
-
     this.route('recap', function() {
       this.route('points');
       this.route('players');
     });
   });
-
+  this.route('login');
+  this.route('new-user');
   this.route('team', { path: 'team/:team_id' }, function() {
     this.route('edit');
     this.route('roster');
     this.route('games');
     this.route('new-game');
   });
-
   this.route('user', { path: 'user/:user_id' }, function() {
     this.route('edit');
     this.route('teams');
     this.route('new-team');
   });
-  this.route('new-user');
 });
 
 export default Router;
