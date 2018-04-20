@@ -1,5 +1,5 @@
   {{#each sortedPlayers as |player i|}}
-    <span class="{{if (is-odd i) team.primary team.secondary}}">
+    <span class="border-top {{if (is-odd i) team.primary team.secondary}}">
       {{game/recap/player-slice
           player=player
           points=points
