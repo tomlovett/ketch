@@ -1,7 +1,7 @@
 import { Factory } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  primary: 'purple',
+  primary: 'blue',
   secondary: 'white',
-  name: 'Purple Jerk',
+  name: 'SPAM',
 });

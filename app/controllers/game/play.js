@@ -16,6 +16,7 @@ export default Controller.extend({
 
   onField: uniq('fieldMen', 'fieldWomen'),
   inPlay: false,
+  wePulled: true,
 
   liveStatType: null,
   liveStatPlayer: null,
@@ -23,14 +24,12 @@ export default Controller.extend({
 
   actions: {
     clearLine() {
-      this.get('onField').forEach((player => {
-        player.toggleProperty('onField');
-      }));
+      this.get('onField').setEach('onField', false);
     },
 
     clickPlayer(player) {
       if (this.get('inPlay')) {
-        const statPlayer = player == this.get('liveStatPlayer') ? null : player;
+        const statPlayer = player === this.get('liveStatPlayer') ? null : player;
         this.set('liveStatPlayer', statPlayer);
 
         this.saveStat();
@@ -48,7 +47,7 @@ export default Controller.extend({
     },
 
     recordScore(weScored) {
-      const teamScore = weScored ? 'game.ourScore' : 'game.theirScore'
+      const teamScore = weScored ? 'game.ourScore' : 'game.theirScore';
 
       this.incrementProperty(teamScore);
       this.savePoint(weScored);
@@ -62,8 +61,11 @@ export default Controller.extend({
       ourScore: this.get('game.ourScore'),
       players: this.get('onField'),
       theirScore: this.get('game.theirScore'),
+      wePulled: this.get('wePulled'),
       weScored: weScored,
     }).save();
+
+    weScored ? this.set('wePulled', true) : this.set('wePulled', false);
 
     this.get('game').save();
 

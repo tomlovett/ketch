@@ -1,3 +1,9 @@
+{{#if wePulled}}
+  <span class="pulling we-pulled round-edges white" {{action toggleProperty 'wePulled'}}>Pulling</span>
+{{else}}
+  <span class="pulling they-pulled round-edges white" {{action toggleProperty 'wePulled'}}>Pulling</span>
+{{/if}}
+
 <div class="flex-10 layout-row">
   {{#if inPlay}}
     {{#paper-button onClick=(action 'recordScore' true) class="green flex-50"}}

@@ -7,5 +7,6 @@ export default DS.Model.extend({
   ourScore: attr('number'),
   players: hasMany(),
   theirScore: attr('number'),
+  wePulled: attr('boolean'),
   weScored: attr('boolean'),
 });
