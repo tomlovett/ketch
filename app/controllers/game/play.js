@@ -29,7 +29,7 @@ export default Controller.extend({
 
     clickPlayer(player) {
       if (this.get('inPlay')) {
-        const statPlayer = player === this.get('liveStatPlayer') ? null : player;
+        const statPlayer = this.get('liveStatPlayer') === player ? null : player;
         this.set('liveStatPlayer', statPlayer);
 
         this.saveStat();
@@ -39,7 +39,7 @@ export default Controller.extend({
     },
 
     clickStat(type) {
-      const statType = this.get('liveStatType') ? null : type;
+      const statType = this.get('liveStatType') === type ? null : type;
 
       this.set('liveStatType', statType);
 

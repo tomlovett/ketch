@@ -11,8 +11,6 @@ export default DS.Model.extend({
   nickname: attr('string'),
 
   handle: computed('nickname', 'firstName', function() {
-    const nickname = this.get('nickname');
-
-    return nickname ? `"${nickname}"` : this.get('firstName');
+    return this.get('nickname') || this.get('firstName');
   }),
 });

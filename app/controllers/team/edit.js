@@ -7,7 +7,7 @@ export default Controller.extend({
   actions: {
     save() {
       this.get('team').save().then(() => {
-        this.transitionToRoute('team');
+        this.transitionToRoute('team.games');
       });
     },
   },
