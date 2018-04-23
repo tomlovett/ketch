@@ -1,17 +1,11 @@
 import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  firstName() {
-    return faker.name.firstName();
-  },
+  firstName: faker.list.cycle('Tom', 'Arda', 'Ben', 'Nick', 'Lauren', 'Bekah', 'Joe', 'Emma', 'Emma', 'Min', 'Sam', 'Ronnie', 'Marley', 'Michelle', 'Temple'),
 
-  gender: faker.list.cycle('m', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm'),
+  lastName: 'A',
 
-  lastName() {
-    return faker.name.lastName();
-  },
+  nickname: faker.list.cycle('', 'Hey Arda!', '', 'NC', 'LoCo', 'The Wrekah', '', '', 'High School Emma', '', 'Chalfin', 'Fresh Ronnie', '', '', '',),
 
-  nickname(i) {
-    return (i % 5) == 0 ? faker.random.word() : null;
-  },
+  gender: faker.list.cycle('m', 'f', 'm', 'm', 'f', 'f', 'm', 'f', 'f', 'm', 'm', 'm', 'f', 'f', 'm'),
 });
