@@ -1,51 +1,18 @@
 # ketch
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+Ketch is a mobile game-tracking app for Ultimate Frisbee. Its simple interface lets sideline players easily track game score, player performance and other metrics with only a few taps.
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd ketch`
 * `npm install`
+* `ember serve`
 
 ## Running / Development
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
+* View game functionality at [http://localhost:4200/game/1/play](http://localhost:4200/game/1/play)
+* Create your user, then create your teams by starting at [http://localhost:4200/new-user](http://localhost:4200/new-user)
 
 ## Further Reading / Useful Links
 
