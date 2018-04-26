@@ -1,9 +1,20 @@
 <div class="game full-height layout-column">
-  {{game/score-board
-      class="flex-25 layout-row"
-      game=model
-      team=model.team
-  }}
+  <div class="flex-25 layout-row">
+    {{game/score-board
+        class="flex-50"
+        teamColor=model.team.primary
+        teamName=model.team.name
+        score=model.ourScore
+    }}
+
+    {{game/score-board
+        class="flex-50"
+        teamColor=model.opponentColor
+        teamName=model.opponentName
+        score=model.theirScore
+    }}
+
+  </div>
 
   {{outlet}}
 </div>
