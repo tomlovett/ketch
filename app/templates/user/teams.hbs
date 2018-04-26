@@ -9,12 +9,9 @@
   </div>
 
   {{#each model.teams as |team|}}
-    <div class="layout-row {{team.primary}} flex-15">
+    <div class="layout-row {{team.primary}} flex-15" {{action transitionToRoute 'team.games' team}}>
       <span class="flex-5"></span>
-      {{#link-to 'team.games' team}}
-        <h3 class="flex">{{team.name}}</h3>
-        {{!-- team record --}}
-      {{/link-to}}
+      <h3 class="flex">{{team.name}}</h3>
     </div>
   {{else}}
     <h4 class="centered">No teams. Create one!</h4>

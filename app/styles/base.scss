@@ -42,3 +42,9 @@ html, body {
 .scroll-y {
   overflow-y: scroll;
 }
+
+md-icon.white-icon {
+  border: 1.5px solid white;
+  border-radius: 50%;
+  color: white;
+}

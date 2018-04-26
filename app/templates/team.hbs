@@ -1,6 +1,16 @@
 <div class="layout-column">
-  <div class="{{model.primary}} flex-10">
-    <h1>{{model.name}}</h1>
+  <div class="{{model.primary}} layout-row flex-10">
+    <span class="flex-5"></span>
+
+    <h1 class="flex">{{model.name}}</h1>
+
+    <span class="flex-10 layout-column layout-align-center-center">
+      {{#link-to 'user.teams' model.user}}
+        {{paper-icon "arrow-upward" size=28 class="white-icon"}}
+      {{/link-to}}
+    </span>
+
+    <span class="flex-5"></span>
   </div>
 
   <div class="layout-row layout-align-space-around-center flex-5">
@@ -16,7 +26,6 @@
       {{#link-to 'team.roster'}}Roster{{/link-to}}
     {{/paper-button}}
   </div>
-
 
   {{outlet}}
 </div>
