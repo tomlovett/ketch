@@ -1,29 +1,23 @@
-<div class="layout-column">
-  <div class="flex-10 layout-row">
-    <span class="flex"></span>
-    
+<div class="layout-column full-height">
+  <div class="flex-10 layout-row layout-align-space-around-center">
     {{#paper-button class="white flex-33"}}
       {{#link-to 'game.recap.points'}}View Points{{/link-to}}
     {{/paper-button}}
 
-    <span class="flex"></span>
-
     {{#paper-button class="white flex-33"}}
       {{#link-to 'game.recap.players'}}View Players{{/link-to}}
     {{/paper-button}}
-    
-    <span class="flex"></span>
   </div>
 
   {{outlet}}
 
-  <div class="flex"></div>
+  <span class="flex"></span>
 
-  <div class="flex-10 layout-row">
-    <span class="flex"></span>
+  <div class="flex-10 layout-row layout-align-center-center">
     {{#paper-button class="white flex-80"}}
       {{#link-to 'game.play'}}Back to Game{{/link-to}}
     {{/paper-button}}
-    <span class="flex"></span>
   </div>
+
+    <span class="flex-5"></span>
 </div>

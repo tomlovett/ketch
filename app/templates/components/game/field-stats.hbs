@@ -1,4 +1,4 @@
-<div class="layout-column layout-align-space-around-center field-stats">
+<div class="full-height layout-column layout-align-space-around-center field-stats">
   <span class="flex-5"></span>
 
   {{#paper-button class="flex-10 stat yellow" onClick=(action clickStat 'goldStar')}}
@@ -9,15 +9,21 @@
     Boo...
   {{/paper-button}}
 
+  <span class="flex"></span>
+
+  {{#paper-button class="flex-10 stat white"}}
+    {{#link-to "game.recap.points"}}Stats{{/link-to}}
+  {{/paper-button}}
+
   {{#paper-button class="flex-10 stat white" onClick=(action resetLine)}}
     Adjust Line
   {{/paper-button}}
 
   <span class="flex"></span>
 
-  {{#paper-button class="flex-15 stat white"}}
-    {{#link-to "game.recap.points"}}View Stats{{/link-to}}
+  {{#paper-button class="flex-10 stat white" onClick=(action closeGame)}}
+    Close Game
   {{/paper-button}}
 
-  <span class="flex"></span>
+  <span class="flex-5"></span>
 </div>

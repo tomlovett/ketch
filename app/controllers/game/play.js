@@ -46,6 +46,16 @@ export default Controller.extend({
       this.saveStat();
     },
 
+    closeGame() {
+      const game = this.get('game');
+
+      game.set('closed', true);
+
+      game.save().then(() => {
+        this.transitionToRoute('team.games', game.get('team'));
+      });
+    },
+
     recordScore(weScored) {
       const teamScore = weScored ? 'game.ourScore' : 'game.theirScore';
 
