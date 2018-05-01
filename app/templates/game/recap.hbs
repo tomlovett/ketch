@@ -14,9 +14,15 @@
   <span class="flex"></span>
 
   <div class="flex-10 layout-row layout-align-center-center">
-    {{#paper-button class="white flex-80"}}
-      {{#link-to 'game.play'}}Back to Game{{/link-to}}
-    {{/paper-button}}
+    {{#if game.closed}}
+      {{#paper-button class="white flex-80"}}
+        {{#link-to 'team.games' game.team}}Back to {{game.team.name}}{{/link-to}}
+      {{/paper-button}}
+    {{else}}
+      {{#paper-button class="white flex-80"}}
+        {{#link-to 'game.play'}}Back to Game{{/link-to}}
+      {{/paper-button}}
+    {{/if}}
   </div>
 
     <span class="flex-5"></span>
