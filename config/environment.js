@@ -29,6 +29,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-cli-mirage'] = { enabled: false }
+    ENV.APP.usingCors = true;
+    ENV.APP.corsWithCreds = true;
+    ENV.APP.apiURL = 'http://localhost:3000/api'
   }
 
   if (environment === 'test') {
