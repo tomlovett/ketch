@@ -2,6 +2,7 @@ export default function(server) {
   const user = server.create('user', { firstName: 'Tom', lastName: 'Lovett' });
   const players = server.createList('player', 15);
   const team = server.create('team', { players, user });
+  console.log('players: ', players)
 
   const game = server.create('game', { ourScore: 3, theirScore: 2, closed: false, team });
   server.create('game', { ourScore: 15, theirScore: 11, team, opponentName: 'Flaming Croissants'});
