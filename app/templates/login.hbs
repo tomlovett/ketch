@@ -1,3 +1,15 @@
-<div class="full-width flex layout-column">
-  
+<div class="full-width flex layout-column layout-align-space-around-center">
+  <h2>Welcome to Ketch Ultimate!</h2>
+  <h3>Identification: {{input value=identification}}</h3>
+  <h3>Password: {{input value=password type='password'}}</h3>
+  {{#paper-button class="white" onClick=(action 'authenticate')}}
+    Login
+  {{/paper-button}}
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+  {{#paper-button class="white" onClick=(action 'invalidateSession')}}
+    Logout
+  {{/paper-button}}
+  <p>session.isAuthenticated: {{session.isAuthenticated}}</p>
 </div>

@@ -34,6 +34,10 @@ export default function() {
   this.patch('teams/:id');
   this.post('teams');
 
+  this.post('token', (schema, request) => {
+    return {"access_token":"ACCESS_TOKEN","token_type":"bearer","expires_in":2592000,"refresh_token":"REFRESH_TOKEN","scope":"read","uid":100101,"info":{"name":"Mark E. Mark","email":"mark@thefunkybunch.com"}}
+  });
+
   this.get('users/:id');
   this.patch('users/:id');
   this.post('users');

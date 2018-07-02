@@ -1,6 +1,14 @@
 <div class="layout-column">
-  <div class="white flex-10">
-    <h1>{{model.firstName}} {{model.nickname}} {{model.lastName}}</h1>
+  <div class="white flex-10 layout-row layout-align-space-between-center">
+    <span class="flex-5"></span>
+
+    <span class="flex">
+      <h1>{{if model.nickname model.nickname model.firstName}}</h1>
+    </span>
+
+    {{#paper-button class="flex-10" raised=true warn=true onClick=(action "logout")}}
+      Logout
+    {{/paper-button}}
   </div>
 
   <div class="layout-row layout-align-space-around-center flex-5">
