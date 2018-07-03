@@ -6,16 +6,16 @@
 
     <span class="flex-5"></span>
 
-    <label>First Name</label>
-    {{input value=firstName onChange=(mut livePlayer.firstName) required=true}}
+    <label>First Name*</label>
+    {{input value=model.firstName onChange=(mut model.firstName) required=true}}
 
-    <label>Last Name</label>
-    {{input value=lastName onChange=(mut livePlayer.lastName) required=true}}
+    <label>Last Name*</label>
+    {{input value=model.lastName onChange=(mut model.lastName) required=true}}
 
     <label>Nickname</label>
-    {{input value=nickname onChange=(mut livePlayer.nickname)}}
+    {{input value=model.nickname onChange=(mut model.nickname)}}
 
-    <label>Gender</label>
+    <label>Gender*</label>
     <div class="layout-row flex-15">
       {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=isM}}
         M

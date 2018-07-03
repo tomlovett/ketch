@@ -27,17 +27,20 @@ export default function() {
 
   this.get('teams/:id');
   this.get('teams', (schema, request) => {
-    const userId = request.queryParams.userId;
+    const { userId } = request.queryParams; // verify
 
     return schema.teams.where({ userId });
   });
   this.patch('teams/:id');
   this.post('teams');
 
-  this.post('token', (schema, request) => {
-    return {"access_token":"ACCESS_TOKEN","token_type":"bearer","expires_in":2592000,"refresh_token":"REFRESH_TOKEN","scope":"read","uid":100101,"info":{"name":"Mark E. Mark","email":"mark@thefunkybunch.com"}}
+  this.post('users/sign_in', (schema, request) => {
+    const { user } = JSON.parse(request.requestBody);
+    return {
+      token: 'ABC123',
+      email: user.email
+    }
   });
-
   this.get('users/:id');
   this.patch('users/:id');
   this.post('users');
