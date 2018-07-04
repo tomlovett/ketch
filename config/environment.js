@@ -10,7 +10,7 @@ module.exports = function(environment) {
       'connect-src': "*",
     },
     'ember-simple-auth': {
-      routeAfterAuthentication: 'user.edit',
+      routeAfterAuthentication: 'user.teams',
       routeIfAlreadyAuthenticated: 'user.teams',
     },
     EmberENV: {

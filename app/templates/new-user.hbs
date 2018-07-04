@@ -1,29 +1,19 @@
   <div class="layout-column layout-align-center-center flex">
     <h3>Welcome to Ketch Ultimate!</h3>
 
-    <p>Tell us a little about yourself.</p>
+    <p>Let's get you signed up.</p>
     <p>Then we'll get started creating your team.</p>
 
     <span class="flex-5"></span>
 
-    <label>First Name*</label>
-    {{input value=model.firstName onChange=(mut model.firstName) required=true}}
+    <label>Email*</label>
+    {{input value=model.email onChange=(mut model.email) required=true}}
 
-    <label>Last Name*</label>
-    {{input value=model.lastName onChange=(mut model.lastName) required=true}}
+    <label>Password*</label>
+    {{input value=model.password onChange=(mut model.password) type='password' required=true}}
 
-    <label>Nickname</label>
-    {{input value=model.nickname onChange=(mut model.nickname)}}
-
-    <label>Gender*</label>
-    <div class="layout-row flex-15">
-      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=isM}}
-        M
-      {{/paper-button}}
-      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'f') primary=isF}}
-        F
-      {{/paper-button}}
-    </div>
+    <label>Verify Password*</label>
+    {{input value=model.passwordConfirmation onChange=(mut model.passwordConfirmation) type='password' required=true}}
 
     <span class="flex-10"></span>
 
@@ -31,6 +21,14 @@
       {{#paper-button class="flex-75" raised=true onClick=(action 'createUser')}}
         Let's Go!
       {{/paper-button}}
+    </div>
+
+    <div class="flex-10">
+      <p>session.isAuthenticated: {{session.isAuthenticated}}</p>
+
+      {{#if errorMessage}}
+        <p class="red">{{errorMessage}}</p>
+      {{/if}}
     </div>
 
     <span class="flex"></span>

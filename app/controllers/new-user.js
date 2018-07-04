@@ -10,20 +10,15 @@ export default Controller.extend({
 
   actions: {
     createUser() {
-      if (!(this.get('model.firstName') && this.get('model.lastName') && this.get('model.gender'))) {
-        this.set('errorMessage', 'Please enter a first name, last name and gender.');
+      if (!(this.get('model.email') && this.get('model.password') && this.get('model.passwordConfirmation'))) {
+        this.set('errorMessage', 'Please enter all values.');
         return;
       }
 
       this.set('errorMessage', '');
       const newUser = this.get('model')
 
-      this.get('store').createRecord('user', {
-        firstName: this.get('model.firstName'),
-        lastName: this.get('model.lastName'),
-        nickname: this.get('model.nickname'),
-        gender: this.get('model.gender'),
-      }).save().catch((error) => {
+      newUser.save().catch((error) => {
         this.set('errorMessage', error);
       }).then(()=>{
         this.get('session')
@@ -32,9 +27,7 @@ export default Controller.extend({
         .catch((reason) => {
           this.set('errorMessage', reason.error ||reason);
         });
-      })//.then((user) => {
-      //   this.transitionToRoute('user.teams', user);
-      // });
+      });
     },
 
     setGender(gender) {
