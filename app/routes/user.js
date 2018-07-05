@@ -1,8 +1,10 @@
 import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
 
 export default Route.extend({
+  currentUser: inject(),
+
   model() {
-    debugger
-    return this.get('store').findRecord('user', params.user_id);
+    this.get('currentUser.user');
   },
 });
