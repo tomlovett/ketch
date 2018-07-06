@@ -1,8 +1,15 @@
-  {{#each sortedPlayers as |player i|}}
-    <span class="border-top {{if (is-odd i) team.primary team.secondary}}">
-      {{game/recap/player-slice
-          player=player
-          points=points
-      }}
-    </span>
-  {{/each}}
+<div class="layout-row {{team.primary}}">
+  <span class="flex-55"></span>
+  <span class="flex-10"><b>O</b></span>
+  <span class="flex-10">+/-</span>
+  <span class="flex-10"><b>D</b></span>
+  <span class="flex-10">+/-</span>
+</div>
+{{#each sortedPlayers as |player i|}}
+  <span class="border-top {{if (is-odd i) team.primary team.secondary}}">
+    {{game/recap/player-slice
+        player=player
+        points=points
+    }}
+  </span>
+{{/each}}

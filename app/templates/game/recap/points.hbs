@@ -3,9 +3,7 @@
       <div class="border-top layout-row flex-10 {{if point.weScored model.team.primary model.game.opponentColor}}">
         <span class="recap-score flex-15">{{point.ourScore}} - {{point.theirScore}}</span>
         <span class="scroll-x flex">
-          {{#each point.players as |player|}}
-            {{player.handle}},
-          {{/each}}
+          {{point.playerString}}
         </span>
       </div>
   {{/each}}

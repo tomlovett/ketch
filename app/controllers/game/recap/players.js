@@ -6,7 +6,6 @@ export default Controller.extend({
   points: alias('model.points'),
   team: alias('model.team'),
 
-  sortedPlayers: sort('players', function(a, b) {
-    return a.get('gender') <= b.get('gender') && a.get('firstName') > b.get('firstName');
-  }),
+  playerSorting: ['handle'],
+  sortedPlayers: sort('players', 'playerSorting'),
 });

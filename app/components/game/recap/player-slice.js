@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { filter, map, sum } from '@ember/object/computed';
+import { filter, filterBy, map, sum } from '@ember/object/computed';
 
 export default Component.extend({
   points: null,
@@ -9,9 +9,17 @@ export default Component.extend({
     return point.get('players').includes(this.get('player'));
   }),
 
-  scoredByToNumbers: map('containsPlayer', function(point) {
+  dPoints: filterBy('containsPlayer', 'wePulled'),
+  oPoints: filterBy('containsPlayer', 'wePulled', false),
+
+  dPointsToResult: map('dPoints', function(point) {
     return point.get('weScored') ? 1 : -1;
   }),
-  
-  plusMinus: sum('scoredByToNumbers'),
+
+  oPointsToResult: map('oPoints', function(point) {
+    return point.get('weScored') ? 1 : -1;
+  }),
+
+  dPlusMinus: sum('dPointsToResult'),
+  oPlusMinus: sum('oPointsToResult'),
 });

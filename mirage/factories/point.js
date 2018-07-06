@@ -7,6 +7,9 @@ export default Factory.extend({
   theirScore(i) {
     return Math.floor((i-1) / 2) + 1;
   },
+  wePulled(i) {
+    return (i % 2 == 1);
+  },
   weScored(i) {
     return (i % 2 == 0);
   },
