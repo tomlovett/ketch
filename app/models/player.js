@@ -9,8 +9,9 @@ export default DS.Model.extend({
   lastName: attr('string'),
   nickname: attr('string'),
   point: hasMany(),
-  team: belongsTo(),
   stat: hasMany(),
+  team: belongsTo(),
+  user: belongsTo(),
 
   handle: computed('nickname', 'firstName', function() {
     return this.get('nickname') || this.get('firstName');

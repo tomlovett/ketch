@@ -1,5 +1,6 @@
 import Service from '@ember/service';
 import { inject } from '@ember/service';
+import { resolve } from 'rsvp';
 
 export default Service.extend({
   session: inject(),
@@ -18,7 +19,7 @@ export default Service.extend({
         this.set('user', user);
       });
     } else {
-      return Ember.RSVP.resolve();
+      return resolve();
     }
   },
 });
