@@ -3,7 +3,7 @@
     <span class="flex-5"></span>
 
     <span class="flex">
-      <h1>{{if model.nickname model.nickname model.firstName}}</h1>
+      <h1>{{model.player.handle}}</h1>
     </span>
 
     {{#paper-button class="flex-10" raised=true warn=true onClick=(action "logout")}}
@@ -17,7 +17,7 @@
     {{/paper-button}}
 
     {{#paper-button class="white flex-25"}}
-      {{#link-to 'user.edit'}}Edit{{/link-to}}
+      {{#link-to 'user.player'}}Edit{{/link-to}}
     {{/paper-button}}
   </div>
 
