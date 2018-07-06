@@ -7,7 +7,7 @@
     }}
   </div>
 
-  <div class="layout-column layout-align-center-center">
+  <div class="layout-column layout-align-center-center flex">
     <span class="flex-5"></span>
 
     <label>First Name</label>
@@ -21,10 +21,10 @@
 
     <label>Gender</label>
     <div class="layout-row flex-15">
-      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=isM}}
+      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=livePlayer.isM}}
         M
       {{/paper-button}}
-      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'f') primary=isF}}
+      {{#paper-button raised=true mini=true onClick=(action 'setGender' 'f') primary=livePlayer.isF}}
         F
       {{/paper-button}}
     </div>
@@ -47,6 +47,8 @@
       {{/paper-button}}
     </div>
 
-    <span class="flex"></span>
+    <span class="flex">
+      <p style="color: red">{{errorMessage}}</p>
+    </span>
   </div>
 </div>

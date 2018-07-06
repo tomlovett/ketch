@@ -6,4 +6,10 @@ export default Route.extend({
 
     controller.resetLivePlayer();
   },
+
+  willTransition() {
+    const player = this.get('livePlayer');
+    
+    player.get('id') ? player.rollbackAttributes() : player.unloadRecord();
+  }
 });

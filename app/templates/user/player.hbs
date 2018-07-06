@@ -12,10 +12,10 @@
 
   <label>Gender</label>
   <div class="layout-row flex-15">
-    {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=isM}}
+    {{#paper-button raised=true mini=true onClick=(action 'setGender' 'm') primary=player.isM}}
       M
     {{/paper-button}}
-    {{#paper-button raised=true mini=true onClick=(action 'setGender' 'f') primary=isF}}
+    {{#paper-button raised=true mini=true onClick=(action 'setGender' 'f') primary=player.isF}}
       F
     {{/paper-button}}
   </div>

@@ -1,17 +1,11 @@
 import Controller from '@ember/controller';
-import { equal } from '@ember/object/computed';
 
 export default Controller.extend({
   livePlayer: null,
-  isF: equal('livePlayer.gender', 'f'),
-  isM: equal('livePlayer.gender', 'm'),
 
   actions: {
     deletePlayer() {
-      if (this.get('livePlayer.id')) {
-        this.get('livePlayer').destroyRecord();
-      }
-
+      this.get('livePlayer').destroyRecord();
       this.resetLivePlayer();
     },
 
@@ -20,18 +14,16 @@ export default Controller.extend({
     },
 
     resetPlayer() {
+      this.get('livePlayer').rollbackAttributes();
       this.resetLivePlayer();
     },
 
     savePlayer() {
-      const player = this.get('livePlayer');
-
-      if (this.get('livePlayer.id')) {
-        player.save();
-      } else {
-        this.get('store').createRecord('player', player).save();
+      if (!this.verifyAttributes()) {
+        return;
       }
 
+      this.get('livePlayer').set('team', this.get('model')).save();
       this.resetLivePlayer();
     },
 
@@ -41,8 +33,16 @@ export default Controller.extend({
   },
 
   resetLivePlayer() {
-    const team = this.get('model');
+    this.set('errorMessage', '');
+    this.set('livePlayer', this.get('store').createRecord('player'));
+  },
 
-    this.set('livePlayer', { team });
+  verifyAttributes() {
+    if (!this.get('livePlayer.firstName') || !this.get('livePlayer.lastName') || !this.get('livePlayer.gender')) {
+      this.set('errorMessage', 'Please set values for first name, last name and gender.');
+      return false;
+    }
+
+    return true;
   },
 });
