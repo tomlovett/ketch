@@ -4,7 +4,8 @@ export default function() {
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   this.get('current_user', (schema, request) => {
-    return schema.users.find(1);
+    // return schema.users.find(1);
+    return schema.users.find(2);
   });
 
   this.get('games/:id');

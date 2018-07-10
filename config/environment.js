@@ -9,10 +9,10 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'connect-src': "*",
     },
-    // 'ember-simple-auth': {
-    //   routeAfterAuthentication: 'user.teams',
-    //   routeIfAlreadyAuthenticated: 'user.teams',
-    // },
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'user.teams',
+      routeIfAlreadyAuthenticated: 'user.teams',
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -28,11 +28,6 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-
-  ENV['ember-simple-auth'] = {
-    routeAfterAuthentication: 'user.teams',
-    routeIfAlreadyAuthenticated: 'user.teams',
-  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

@@ -1,10 +1,9 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  afterModel() {
-    if (!this.get('model.player')) {
-      const user = this.get('model');
-      this.get('store').createRecord('player', { user })
+  afterModel(user) {
+    if (!user.get('player.id')) {
+      this.get('store').createRecord('player', { user }); // fucking up
     }
   },
 });

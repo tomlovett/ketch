@@ -1,6 +1,6 @@
 export default function(server) {
-  const user = server.create('user', { email: 'tom@ketch.com', password: 'pass' });
   const players = server.createList('player', 15);
+  const user = server.create('user', { email: 'tom@ketch.com', password: 'pass', playerId: 1 });
   const team = server.create('team', { players, user });
 
   const game = server.create('game', { ourScore: 3, theirScore: 2, closed: false, team });

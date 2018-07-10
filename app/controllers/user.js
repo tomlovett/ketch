@@ -6,7 +6,7 @@ export default Controller.extend({
 
   actions: {
     logout() {
-      this.get('session').invalidate(); // send somewhere else
+      this.get('session').invalidate();
     },
   }
 });
