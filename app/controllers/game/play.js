@@ -6,13 +6,13 @@ export default Controller.extend({
   team: alias('game.team'),
   players: alias('team.players'),
 
-  men: filterBy('players', 'gender', 'm'),
+  men: filterBy('players', 'isM'),
   benchMen: filterBy('men', 'onField', false),
-  fieldMen: filterBy('men', 'onField', true),
+  fieldMen: filterBy('men', 'onField'),
 
-  women: filterBy('players', 'gender', 'f'),
+  women: filterBy('players', 'isF'),
   benchWomen: filterBy('women', 'onField', false),
-  fieldWomen: filterBy('women', 'onField', true),
+  fieldWomen: filterBy('women', 'onField'),
 
   onField: uniq('fieldMen', 'fieldWomen'),
   inPlay: false,
@@ -75,10 +75,8 @@ export default Controller.extend({
       weScored: weScored,
     }).save();
 
-    weScored ? this.set('wePulled', true) : this.set('wePulled', false);
-
+    this.set('wePulled', weScored);
     this.get('game').save();
-
     this.saveQueuedStats(point);
   },
 
@@ -100,7 +98,6 @@ export default Controller.extend({
 
   saveQueuedStats(point) {
     this.get('queuedStats').setEach('point', point);
-
     this.get('queuedStats').forEach(function(statObj) {
       statObj.save();
     });

@@ -19,7 +19,10 @@
 
     <div class="flex-10">
       {{#paper-button class="flex-75" raised=true onClick=(action 'createUser')}}
-        Let's Go!
+        Sign up
+      {{/paper-button}}
+      {{#paper-button class="white"}}
+        {{link-to "Login" 'login'}}
       {{/paper-button}}
     </div>
 
