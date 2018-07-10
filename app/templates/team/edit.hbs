@@ -5,7 +5,7 @@
     <h3 class="flex">Primary: </h3>
     {{team/color-select
         selected=team.primary
-        onChange=(action (mut team.primary))
+        onchange=(action (mut team.primary))
         class="flex"
     }}
   </div>
@@ -14,7 +14,7 @@
     <h3 class="flex">Secondary: </h3>
     {{team/color-select
       selected=team.secondary
-      onChange=(action (mut team.secondary))
+      onchange=(action (mut team.secondary))
       class="flex"
     }}
   </div>
