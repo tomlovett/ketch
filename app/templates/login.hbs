@@ -11,9 +11,4 @@
   {{#if errorMessage}}
     <p>{{errorMessage}}</p>
   {{/if}}
-  {{#paper-button class="white" onClick=(action 'invalidateSession')}}
-    Logout
-  {{/paper-button}}
-  <p>session.isAuthenticated: {{session.isAuthenticated}}</p>
-  {{link-to 'Go to user/teams' 'user.teams'}}
 </div>
