@@ -1,9 +1,9 @@
 <div class="layout-row flex">
   <div class="flex-33">
     {{game/player-list
+        team=model
         players=model.players
         clickPlayer=(action 'editPlayer')
-        playerClass=model.primary
     }}
   </div>
 

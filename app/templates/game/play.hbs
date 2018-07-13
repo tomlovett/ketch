@@ -28,16 +28,16 @@
     }}
   {{else}}
     {{game/player-list
+        team=team
         players=benchMen
         clickPlayer=(action 'clickPlayer')
         class="flex-25"
-        playerClass=team.primary
     }}
     {{game/player-list
+        team=team
         players=benchWomen
         clickPlayer=(action 'clickPlayer')
         class="flex-25"
-        playerClass=team.secondary
     }}
   {{/if}}
 
@@ -45,14 +45,14 @@
 
   <div class="flex-25">
     {{game/player-list
+        team=team
         players=fieldWomen
         clickPlayer=(action 'clickPlayer')
-        playerClass=team.secondary
     }}
     {{game/player-list
+        team=team
         players=fieldMen
         clickPlayer=(action 'clickPlayer')
-        playerClass=team.primary
     }}
 
     {{#unless inPlay}}

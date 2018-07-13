@@ -68,6 +68,7 @@ export default Controller.extend({
 
   savePoint(weScored) {
     const point = this.get('store').createRecord('point', {
+      game: this.get('game'),
       ourScore: this.get('game.ourScore'),
       players: this.get('onField'),
       theirScore: this.get('game.theirScore'),

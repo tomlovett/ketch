@@ -10,13 +10,18 @@ export default Controller.extend({
 
   actions: {
     createTeam() {
-      // verify input
+      if (!this.get('name')) {
+        this.set('errorMessage', 'Please enter a team name.');
+      }
+
+      let players = [this.get('user.player.content')];
 
       this.get('store').createRecord('team', {
-        user: this.get('user'),
         name: this.get('name'),
+        players,
         primary: this.get('primary'),
         secondary: this.get('secondary'),
+        user: this.get('user'),
       }).save().then((team) => {
         this.transitionToRoute('team.roster', team);
       });

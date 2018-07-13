@@ -1,12 +1,12 @@
-<div class="layout-row {{team.primary}}">
+<div class="layout-row">
   <span class="flex-55"></span>
   <span class="flex-10"><b>O</b></span>
   <span class="flex-10">+/-</span>
   <span class="flex-10"><b>D</b></span>
   <span class="flex-10">+/-</span>
 </div>
-{{#each sortedPlayers as |player i|}}
-  <span class="border-top {{if (is-odd i) team.primary team.secondary}}">
+{{#each sortedPlayers as |player|}}
+  <span class="border-top {{if player.isM team.primary team.secondary}}">
     {{game/recap/player-slice
         player=player
         points=points

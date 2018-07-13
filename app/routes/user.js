@@ -6,6 +6,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
   currentUser: inject(),
 
   model() {
+    if (this.get('currentUser.user')) {
+      return this.get('currentUser.user');
+    }
+
     return this.get('currentUser').load().then(() => {
       return this.get('currentUser.user');
     });

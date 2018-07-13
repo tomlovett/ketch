@@ -1,6 +1,6 @@
 <div class="player-list layout-column">
   {{#each sortedPlayers as |player|}}
-    <div class="flex player-slice round-edges {{playerClass}}" {{action clickPlayer player}}>
+    <div class="flex player-slice round-edges {{if player.isM team.primary team.secondary}}" {{action clickPlayer player}}>
       {{player.handle}}
     </div>
   {{/each}}
