@@ -1,8 +1,5 @@
   <div class="layout-column layout-align-center-center flex">
-    <h3>Welcome to Ketch Ultimate!</h3>
-
-    <p>Let's get you signed up.</p>
-    <p>Then we'll get started creating your team.</p>
+    <h2>Ketch Ultimate</h2>
 
     <span class="flex-5"></span>
 
@@ -21,16 +18,15 @@
       {{#paper-button class="flex-75" raised=true onClick=(action 'createUser')}}
         Sign up
       {{/paper-button}}
-      {{#paper-button class="white"}}
-        {{link-to "Login" 'login'}}
-      {{/paper-button}}
     </div>
 
     <div class="flex-10">
       {{#if errorMessage}}
-        <p class="red">{{errorMessage}}</p>
+        <p class="error">{{errorMessage}}</p>
       {{/if}}
     </div>
+
+    <p>Or click here to {{link-to 'Login' 'login' class="hyperlink"}}</p>
 
     <span class="flex"></span>
   </div>

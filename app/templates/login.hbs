@@ -1,14 +1,13 @@
 <div class="full-width flex layout-column layout-align-space-around-center">
-  <h2>Welcome to Ketch Ultimate!</h2>
+  <h2>Ketch Ultimate</h2>
   <h3>Email: {{input value=identification}}</h3>
   <h3>Password: {{input value=password type='password'}}</h3>
   {{#paper-button class="white" onClick=(action 'authenticate')}}
     Login
   {{/paper-button}}
-  {{#paper-button class="white"}}
-    {{link-to "Sign up" 'new-user'}}
-  {{/paper-button}}
   {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
+  <p class="error">{{errorMessage}}</p>
   {{/if}}
+
+  <p>Not a user yet? {{link-to 'Sign up' 'new-user' class="hyperlink"}}</p>
 </div>
