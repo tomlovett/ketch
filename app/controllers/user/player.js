@@ -6,7 +6,7 @@ export default Controller.extend({
 
   actions: {
     saveChanges() {
-      this.get('player').save(); // broken
+      this.get('player.content').save();
     },
 
     setGender(gender) {
