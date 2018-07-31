@@ -13,6 +13,8 @@ Video demo coming soon!
 
 * Ketch is meant to be a mobile app, so it's recommended to shrink your window or open smartphone view in dev tools.
 * Create your user, then create your teams by starting at [http://localhost:4200/new-user](http://localhost:4200/new-user)
+* If the app is connected to Rails, see this [commit](https://github.com/tomlovett/ketch/commit/0adce0c5deb6972287a1f216dba59596febde600) for how to revert to Mirage testing data.
+
 
 ## Further Reading / Useful Links
 
