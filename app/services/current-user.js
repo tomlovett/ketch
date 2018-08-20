@@ -13,7 +13,7 @@ export default Service.extend({
 
   load() {
     return this.get('store').findRecord('user', 1).then((user) => {
-      this.set('user', user)
+      this.set('user', user);
     })
     // if (this.get('session.isAuthenticated')) {
     //   return this.get('store').queryRecord('user', { me: true }).catch(() => {
