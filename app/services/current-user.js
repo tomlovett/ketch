@@ -12,14 +12,17 @@ export default Service.extend({
   },
 
   load() {
-    if (this.get('session.isAuthenticated')) {
-      return this.get('store').queryRecord('user', { me: true }).catch(() => {
-        this.get('session').invalidate();
-      }).then((user) => {
-        this.set('user', user);
-      });
-    } else {
-      return resolve();
-    }
+    return this.get('store').findRecord('user', 1).then((user) => {
+      this.set('user', user)
+    })
+    // if (this.get('session.isAuthenticated')) {
+    //   return this.get('store').queryRecord('user', { me: true }).catch(() => {
+    //     this.get('session').invalidate();
+    //   }).then((user) => {
+    //     this.set('user', user);
+    //   });
+    // } else {
+    //   return resolve();
+    // }
   },
 });
