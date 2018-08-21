@@ -1,4 +1,3 @@
-import { underscore } from '@ember/string';
 import DS from 'ember-data';
 
 export default DS.JSONAPISerializer.extend({
@@ -9,13 +8,6 @@ export default DS.JSONAPISerializer.extend({
     json.data.relationships = this.underscoreKeys(json.data.relationships)
 
     return json;
-  },
-
-  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-    console.log('normalizeResponse -> payload: ', payload);
-    const normalizedResponse = this._super(...arguments);
-    console.log('normalizedResponse: ',normalizedResponse)
-    return normalizedResponse
   },
 
   underscoreKeys(obj) {
