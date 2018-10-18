@@ -10,4 +10,8 @@ export default Route.extend({
   afterModel(model) {
     model.get('team.players').setEach('onField', false);
   },
+
+  willTransition(transition) {
+    this.controller.set('model', null);
+  }
 });

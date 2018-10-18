@@ -1,5 +1,5 @@
-import JSONAPISerializer from './application';
-
-export default JSONAPISerializer.extend({
-  include: ['team'],
-});
+// import JSONAPISerializer from './application';
+//
+// export default JSONAPISerializer.extend({
+//   include: ['team'],
+// });

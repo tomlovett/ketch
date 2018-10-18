@@ -4,7 +4,7 @@ export default DS.JSONAPISerializer.extend({
   serialize(snapshot, options) {
     let json = this._super(...arguments)
 
-    json.data.attributes = this.underscoreKeys(json.data.attributes)
+    json.data.attributes = this.underscoreKeys(json.data.attributes) // has to be updated
     json.data.relationships = this.underscoreKeys(json.data.relationships)
 
     return json;
