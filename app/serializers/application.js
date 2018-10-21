@@ -7,7 +7,7 @@ export default DS.JSONAPISerializer.extend({
     json.data.attributes = this.underscoreKeys(json.data.attributes) // has to be updated
     json.data.relationships = this.underscoreKeys(json.data.relationships)
 
-    return json;
+    return json
   },
 
   underscoreKeys(obj) {
