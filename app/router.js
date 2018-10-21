@@ -22,7 +22,7 @@ Router.map(function() {
     this.route('games');
     this.route('new-game');
   });
-  this.route('user', { path: 'user/:user_id' }, function() {
+  this.route('user', function() {
     this.route('new-team');
     this.route('player');
     this.route('teams');
