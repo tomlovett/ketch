@@ -2,7 +2,7 @@
 
 Ketch is a mobile game-tracking app for Ultimate Frisbee. Its simple interface lets sideline players easily track game score, player performance and other metrics with only a few taps.
 
-[Demo gif on Imgur](https://imgur.com/a/RWvlS4S)
+[Gameplay gif on Imgur](https://imgur.com/a/RWvlS4S) (~1 min)
 
 ## Installation
 
