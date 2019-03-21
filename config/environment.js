@@ -35,6 +35,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    // To convert to Front-end only demo, comment out these four lines
     ENV['ember-cli-mirage'] = { enabled: false }
     ENV.APP.usingCors = true;
     ENV.APP.corsWithCreds = true;

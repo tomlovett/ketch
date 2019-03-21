@@ -18,7 +18,7 @@ export default function() {
   this.post('games');
 
   this.get('players/:id');
-  this.patch('players/:id');
+  this.put('players/:id');
   this.post('players');
   this.del('players/:id');
 
