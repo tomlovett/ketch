@@ -8,5 +8,5 @@ export default DS.Model.extend({
   players: hasMany(),
   primary: attr('string'),
   secondary: attr('string'),
-  user: hasMany(),
+  users: hasMany(),
 });

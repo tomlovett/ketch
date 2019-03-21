@@ -1,11 +1,11 @@
 <div class="layout-column">
-  <h3>Team Name: {{input value=(mut name)}}</h3>
+  <h3>Team Name: {{input value=(mut team.name)}}</h3>
 
   <div class="layout-row">
     <h3 class="flex">Primary: </h3>
     {{team/color-select
-        onchange=(action (mut primary))
-        selected=primary
+        onchange=(action (mut team.primary))
+        selected=team.primary
         class="flex"
     }}
   </div>
@@ -13,8 +13,8 @@
   <div class="layout-row">
     <h3 class="flex">Secondary: </h3>
     {{team/color-select
-        onchange=(action (mut secondary))
-        selected=secondary
+        onchange=(action (mut team.secondary))
+        selected=team.secondary
         class="flex"
     }}
   </div>

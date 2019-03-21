@@ -36,6 +36,6 @@ export default DS.JSONAPISerializer.extend({
     const key = `${singularize(relationship.key)}_ids`
     const values = snapshot.hasMany(relationship.key, { ids: true });
 
-    json.attributes[key] = values
+    json.attributes[key] = values || []
   },
 });

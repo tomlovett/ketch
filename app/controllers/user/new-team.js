@@ -10,20 +10,18 @@ export default Controller.extend({
 
   actions: {
     createTeam() {
-      if (!this.get('name')) {
+      if (!this.get('team.name')) {
         this.set('errorMessage', 'Please enter a team name.');
+        return;
       }
 
-      let players = [this.get('user.player.content')];
+      const team = this.get('team');
+      const user = this.get('user');
+      team.get('users').pushObject(this.get('user'));
+      team.get('players').pushObject(this.get('user.player.content'));
 
-      this.get('store').createRecord('team', {
-        name: this.get('name'),
-        players,
-        primary: this.get('primary'),
-        secondary: this.get('secondary'),
-        user: this.get('user'),
-      }).save().then((team) => {
-        this.transitionToRoute('team.roster', team);
+      team.save().then((teamModel) => {
+        this.transitionToRoute('team.roster', teamModel);
       });
     },
   },
